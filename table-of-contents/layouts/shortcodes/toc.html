@@ -3,13 +3,17 @@
 {{ $headerClass:= .Get "header-class" }}
 {{ $bodyClass:= .Get "body-class" }}
 
-{{ range $i, $e:= .Params }}
-  {{ if and (eq $i "title") ($e) }}
-    {{ $title = $e }}
-  {{else}}
-    {{ $title = i18n "toc" }}
+{{ if .Params }}
+  {{ range $i, $e:= .Params }}
+    {{ if eq $i "title" }}
+      {{ $title = $e }}
+    {{ end }}
   {{ end }}
+{{else}}
+  {{ $title = i18n "toc" }}
 {{ end }}
+  
+
 
 
 <div class="accordion {{ $class }}">
