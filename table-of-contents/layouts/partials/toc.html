@@ -6,7 +6,11 @@
 
 <div class="accordion {{ $class }}">
   <button class="accordion-header {{ $headerClass }}" data-accordion>
-    {{ $title | markdownify }}
+    {{ if $title }}
+      {{ $title | markdownify }}
+    {{ else }}
+      {{ i18n "toc" | markdownify }}
+    {{ end }}
     <svg
       class="accordion-icon"
       x="0px"
