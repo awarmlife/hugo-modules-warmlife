@@ -1,0 +1,12 @@
+{{ $class:= .Class }}
+{{ $status:= .Status }}
+<details class="table-of-content {{$class}}" {{$status}}>
+  <summary>
+    {{ with i18n "toc" }}
+      {{ . }}
+    {{ else }}
+      Table Of Contents
+    {{ end }}
+  </summary>
+  {{ .TableOfContents }}
+</details>
