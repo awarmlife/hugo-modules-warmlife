@@ -4,7 +4,7 @@
 {{ $bodyClass:= .Get "body-class" }}
 
 {{ range $i, $e:= .Params }}
-  {{ if eq $i "title" }}
+  {{ if and (eq $i "title") ($e) }}
     {{ $title = $e }}
   {{else}}
     {{ $title = i18n "toc" }}
