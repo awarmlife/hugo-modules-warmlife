@@ -1,4 +1,4 @@
-{{ $title:= .Get 0 }}
+{{ $title:= i18n "toc" }}
 {{ $class:= .Get "class" }}
 {{ $headerClass:= .Get "header-class" }}
 {{ $bodyClass:= .Get "body-class" }}
@@ -9,8 +9,6 @@
       {{ $title = $e }}
     {{ end }}
   {{ end }}
-{{ else }}
-  {{ $title = i18n "toc" }}
 {{ end }}
   
 
