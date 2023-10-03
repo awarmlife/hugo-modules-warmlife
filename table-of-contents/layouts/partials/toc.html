@@ -23,6 +23,6 @@
     </svg>
   </button>
   <div class="accordion-content {{ $bodyClass }}">
-    <p>{{ .TableOfContents | markdownify }}</p>
+    <p>{{ .Page.TableOfContents | markdownify }}</p>
   </div>
 </div>
